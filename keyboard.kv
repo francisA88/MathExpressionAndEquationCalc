@@ -1,0 +1,268 @@
+#:import Factory kivy.factory.Factory
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+#:import main __main__
+#:import mappings mappings
+
+#:set btnbgdown "res/bgdown.png"
+#:set btnbgnorm "res/bgnorm.png"
+
+<Spbutton@Button>:
+	markup: True
+	font_size: 32
+	color: .15, .15, .15, 1
+	#font_name: ""
+	#font_name: "CutiveMono"
+	background_down: btnbgdown
+	background_normal: btnbgnorm
+	on_release:
+		exec("try: app.getCurrent.insert_text(mappings.sups[self.text] if app.getMain.ids.keyboard.ids.home.ids.sup.state=='down' else mappings.maps[self.text])\nexcept: pass")
+		exec("app.getCurrent.do_cursor_movement('cursor_left')")
+<Trigbutton@Spbutton>:
+	font_size: 20
+	
+<SpTogbutton@ToggleButton>:
+	markup: True
+	font_size: 32
+	background_color: 0, .498, .3098, 1
+	disabled_color: 0, .498, .307, .7
+	
+<SHome>:
+	GridLayout:
+		id: container
+		cols: 2
+		rows: 1
+		spacing: 4,4
+		GridLayout:
+			id: numkeys
+			rows: 5
+			cols: 4
+			spacing: 1
+			size: container.width/2, container.height
+			Spbutton:
+				text: "1"
+			Spbutton:
+				text: "2"
+			Spbutton:
+				text: "3"
+			Spbutton:
+				text: "4"
+			Spbutton:
+				text: "5"
+			Spbutton:
+				text: "6"
+			Spbutton:
+				text: "7"
+			Spbutton:
+				text: "8"
+			Spbutton:
+				text: "9"
+			Spbutton:
+				text: "0"
+			Spbutton:
+				text: "="
+			Spbutton:
+				text: "√"
+			Spbutton:
+				text: "("
+			Spbutton:
+				text: ")"
+			Spbutton:
+				text: "×"
+			Spbutton:
+				text: "+"
+			Spbutton:
+				text: "-"
+			Spbutton:
+				text: "/"
+			Spbutton:
+				text: "!"
+			Spbutton:
+				text: "π"
+		GridLayout:
+			id: otherkeys
+			cols: 3
+			rows: 4
+			spacing: 1
+			SpTogbutton:
+				id: sup
+				text: "x[sup]b[/sup]"
+			Spbutton:
+				on_press: app.getCurrent.insert_text(" ")
+#				
+#				disabled: True if sub.state=="down" else False
+#			SpTogbutton:
+#				id: sub
+#				text: "x[sub]b[/sub]"
+#				disabled: True if sup.state=="down" else False
+				
+			Spbutton:
+				text: "[size=36].[/size]"
+			Spbutton:
+				text: "x"
+			Spbutton:
+				text: "y"
+			Spbutton:
+				#backspace btn
+				text: "\uF06E"
+				font_name: "materialdesignicons-webfont.ttf"
+				on_release:
+				on_press:
+					exec("try:app.getCurrent.do_backspace()\nexcept: pass")
+			Spbutton:
+				text: ","
+			Spbutton:
+				text: "|x|"
+			Spbutton:
+				#new field btn
+				text: "new"
+				on_release: app.main.ids.calcArea.ids.container.add_widget(Factory.Field())
+				font_name: FONTPATH
+			Spbutton:
+				text: "[sup]n[/sup]√"
+			Spbutton:
+				font_name: FONTPATH
+				text: "←"
+				on_press: exec("try: app.getCurrent.do_cursor_movement('cursor_left')\nexcept: pass")
+				#font_name: "CutiveMono"
+			Spbutton:
+				font_name: FONTPATH
+				text: "→"
+				on_press: exec("try: app.getCurrent.do_cursor_movement('cursor_right')\nexcept: pass")
+				#font_name: "CutiveMono"
+<STrig>:
+	GridLayout:
+		id: trigGroup
+		spacing: 1
+		rows: 3
+		cols: 6
+		Trigbutton:
+			text: "sin"
+		Trigbutton:
+			text: "cos"
+		Trigbutton:
+			text: "tan"
+		Trigbutton:
+			text: "tan[sup]-1[/sup]"
+		Trigbutton:
+			text: "cos[sup]-1[/sup]"
+		Trigbutton:
+			text: "sin[sup]-1[/sup]"
+		Trigbutton:
+			text: "csc"
+		Trigbutton:
+			text: "sec"
+		Trigbutton:
+			text: "cot"
+		Trigbutton:
+			text: "sinh"
+		Trigbutton:
+			text: "cosh"
+		Trigbutton:
+			text: "tanh"
+		Trigbutton:
+			text: "sinh[sup]-1[/sup]"
+		Trigbutton:
+			text: "cosh[sup]-1[/sup]"
+		Trigbutton:
+			text: "tanh[sup]-1[/sup]"
+		Trigbutton:
+			text: "coth"
+		Trigbutton:
+			text: "sech"
+		Trigbutton:
+			text: "csch"
+			
+<SMisc>:
+	GridLayout:
+		id: miscGroup
+		spacing: 1
+		rows: 4
+		cols: 5
+		Spbutton:
+			text: "\u222B"
+		Spbutton:
+			text: "\u2211"
+		Spbutton:
+			text: "ln"
+		Spbutton:
+			text: "log"
+		Spbutton:
+			text: "log[sub]a[/sub]"
+		Spbutton:
+			text: "d/dx"
+		Spbutton:
+			text: "floor"
+		Spbutton:
+			text: "ceil"
+		Spbutton:
+			text: "e[sup]x[/sup]"
+		Spbutton:
+			text: "pol"
+		Spbutton:
+			text: "rec"
+		Spbutton:
+			text: "max"
+		Spbutton:
+			text: "min"
+		Spbutton:
+			text: "[sup]n[/sup]C[sub]r[/sub]"
+		Spbutton:
+			text: "[sup]n[/sup]P[sub]r[/sub]"
+			
+<Keyboard>:
+	size_hint: None, None
+	size: Window.width, Window.height*3/8
+	pos: 0,0
+	#numkeys: numkeys
+	mngr: mngr
+	canvas.before:
+		Color:
+			rgba: 0, .4, 0.247, 0.7
+		Rectangle:
+			size: self.size
+			pos: self.pos
+		Color:
+			rgba: 0.0, .34, 0.30, .7
+		Rectangle:
+			size: self.width, 40
+			pos: self.x, self.top - 40
+	BoxLayout:
+		orientation: "horizontal"
+		size_hint: None, None
+		size: root.width, 40
+		pos: root.x, root.top-40
+		spacing: trig.width/3
+		MDRaisedButton:
+			id: trig
+			size: root.width/3, 40
+			size_hint: None, None
+			text: "[i]trig[/i]"
+			color: 1,1,1,1
+			markup: True
+			on_release: mngr.current="strig"
+		MDRaisedButton:
+			id: misc
+			size: trig.size
+			text: "[i]misc[/i]"
+			markup: True
+			on_release: mngr.current="smisc"
+		MDRaisedButton:
+			id: home
+			size: trig.size
+			text: "[i]home[/i]"
+			markup: True
+			on_release: mngr.current= "shome"
+
+	ScreenManager:
+		id: mngr
+		size_hint: None, None
+		size: root.width, root.height - 40
+		transition: NoTransition()
+		SHome:
+			id: home
+			name: "shome"
+		STrig:
+			name: "strig"
+		SMisc:
+			name: "smisc"
+	

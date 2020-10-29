@@ -1,0 +1,47 @@
+#:import Window kivy.core.window.Window
+#:set FONTPATH "freefont/freeserif.ttf"
+
+<SpecialInput>:
+	font_size: 30
+	padding_x: 20, 80
+#	on_text: app.proc.adjustSome()
+	hint_text: "Type in your equation/expression" if not self.focused else "Click solve to see result"
+	markup: True
+	multiline: False
+	font_name: FONTPATH
+	font_size: 30
+		
+<MainWidget>:
+	orientation: "vertical"
+	id: mainManager
+	Screen:
+		name: "main"
+		BoxLayout:
+			orientation: "vertical"
+			size_hint: None, None
+			size: Window.width, Window.height*5/8
+			pos_hint: {"x":0, "top":1}
+			MDToolbar:
+				id: actionbar
+				md_bg_color: app.theme_cls.primary_color
+				elevation: 7
+					#pos: root.top, 0
+				title: " M-Eχpressioŋ"
+				left_action_items: [["menu", lambda x: 1]]
+				right_action_items: [['dots-vertical', lambda x:None]]
+				opposite_colors: True
+			CalculationArea: #See calc_area.kv
+				id: calcArea
+				size: Window.width, Window.height-keyboard.height
+		Keyboard:
+			id: keyboard	#See keyboard.kv
+		NavigationLayout:
+			id: navLayout
+			theme_cls: app.theme_cls
+			MDNavigationDrawer:
+				drawer_logo: "/sdcard/pictures/12668.jpg"
+				#theme_cls: app.theme_cls
+				#MDNavigationDrawerIconButton:
+#					text: "jsjeje"
+#		
+		

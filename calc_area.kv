@@ -1,0 +1,39 @@
+#:import TextField kivymd.uix.textfield.MDTextField
+
+<Field@FloatLayout>:
+	#orientation: "horizontal"
+	size_hint: None, None
+	size: Window.width, 100
+	sbtn: solvebtn
+	Button:
+		id: solvebtn
+		text: "Solve"
+		size_hint: None, None
+		size: Window.width//8, _inp.height*.75
+		pos: root.x, root.y+_inp.height*.25
+		background_normal: ""
+		background_down: ""
+		background_color: 0, .4, .247, .7
+		color: 0, .34, .30, 1.
+		on_press: exec("try:print(app.getCurrent.text)\nexcept Exception as e:print(e)")
+		
+	SpecialInput:
+		id: _inp
+		size: Window.width-solvebtn.width, root.height
+		text: ""
+		pos: solvebtn.right, root.y
+		
+<CalculationArea>:
+	GridLayout:
+		id: container
+		size_hint: None, None
+		size: root.size
+		#orientation: "vertical"
+		cols: 1
+		rows: len(self.children)+1
+		spacing: 5
+		#padding: [0,0,0,]
+		Field:
+			id: f1
+			
+	#	SpecialInput:

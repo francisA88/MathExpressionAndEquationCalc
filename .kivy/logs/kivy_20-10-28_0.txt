@@ -1,0 +1,52 @@
+[INFO   ] Logger: Record log in /storage/emulated/0/projects/Calculator/.kivy/logs/kivy_20-10-28_0.txt
+[WARNING] [Config      ] Upgrading configuration in progress.
+[WARNING] [Config      ] Older configuration version detected (0 instead of 21)
+[INFO   ] Kivy: v1.11.1
+[INFO   ] Kivy: Installed at "/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages/kivy/__init__.py"
+[INFO   ] Python: v3.8.3 (default, Jun 15 2020, 02:19:10) 
+[GCC 9.3.0]
+[INFO   ] Python: Interpreter at "/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/bin/python3"
+[INFO   ] Factory: 184 symbols loaded
+[INFO   ] Image: Providers: img_tex, img_dds, img_sdl2, img_gif (img_pil, img_ffpyplayer ignored)
+[INFO   ] Text: Provider: sdl2
+[INFO   ] Window: Provider: sdl2
+[INFO   ] GL: Using the "OpenGL ES 2" graphics system
+[INFO   ] GL: Backend used <sdl2>
+[INFO   ] GL: OpenGL version <b'OpenGL ES 2.0 58bf738'>
+[INFO   ] GL: OpenGL vendor <b'ARM'>
+[INFO   ] GL: OpenGL renderer <b'Mali-400 MP'>
+[INFO   ] GL: OpenGL parsed version: 2, 0
+[INFO   ] GL: Texture max size <4096>
+[INFO   ] GL: Texture max units <8>
+[INFO   ] Window: auto add sdl2 input provider
+[INFO   ] Window: virtual keyboard not allowed, single mode, not docked
+[INFO   ] KivyMD: v0.103.0
+[INFO   ] GL: NPOT texture support is available
+[WARNING] Deprecated property "<VariableListProperty name=padding_x>" of object "<__main__.SpecialInput object at 0x86762d78>" was accessed, it will be removed in a future version
+[WARNING] stderr: Traceback (most recent call last):
+[WARNING] stderr:   File "/storage/emulated/0/projects/Calculator/main.py", line 124, in <module>
+[WARNING] stderr:     CalcApp().run()
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages/kivy/app.py", line 829, in run
+[WARNING] stderr:     root = self.build()
+[WARNING] stderr:   File "/storage/emulated/0/projects/Calculator/main.py", line 104, in build
+[WARNING] stderr:     self.main=MainWidget()
+[WARNING] stderr:   File "/storage/emulated/0/projects/Calculator/main.py", line 93, in __init__
+[WARNING] stderr:     super().__init__(**kwargs)
+[WARNING] stderr:   File "screenmanager.py", line 968, in kivy.uix.screenmanager.ScreenManager.__init__
+[WARNING] stderr:   File "floatlayout.py", line 65, in kivy.uix.floatlayout.FloatLayout.__init__
+[WARNING] stderr:   File "layout.py", line 76, in kivy.uix.layout.Layout.__init__
+[WARNING] stderr:   File "widget.py", line 359, in kivy.uix.widget.Widget.__init__
+[WARNING] stderr:   File "widget.py", line 467, in kivy.uix.widget.Widget.apply_class_lang_rules
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages/kivy/lang/builder.py", line 536, in apply
+[WARNING] stderr:     self._apply_rule(
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages/kivy/lang/builder.py", line 658, in _apply_rule
+[WARNING] stderr:     self._apply_rule(
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages/kivy/lang/builder.py", line 658, in _apply_rule
+[WARNING] stderr:     self._apply_rule(
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages/kivy/lang/builder.py", line 658, in _apply_rule
+[WARNING] stderr:     self._apply_rule(
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages/kivy/lang/builder.py", line 616, in _apply_rule
+[WARNING] stderr:     cls = Factory_get(cname)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages/kivy/factory.py", line 131, in __getattr__
+[WARNING] stderr:     raise FactoryException('Unknown class <%s>' % name)
+[WARNING] stderr: kivy.factory.FactoryException: Unknown class <MDNavigationDrawerIconButton>
